@@ -1,32 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * Free License
  */
 package cb.project.action;
 
-import cb.project.dto.DtoUser;
+import cb.project.model.ModelUser;
+import cb.project.service.ServiceUser;
 import com.opensymphony.xwork2.ActionSupport;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  *
- * @author Administrator
+ * @author Miguel Pazo Sánchez (http://miguelpazo.com/)
  */
 public class ActionLogin extends ActionSupport {
 
-    private DtoUser objUser;
+    private ModelUser objUser;
 
-    public DtoUser getObjUser() {
+    @Autowired
+    @Qualifier("impl1")
+    private ServiceUser oService;
+
+    public ModelUser getObjUser() {
         return objUser;
     }
 
-    public void setObjUser(DtoUser objUser) {
+    public void setObjUser(ModelUser objUser) {
         this.objUser = objUser;
     }
 
     public String login() {
-        if (objUser.getUser().equals("miguel")
-                && objUser.getPassword().equals("123")) {
+        if (oService.login(objUser)) {
             return SUCCESS;
         } else {
             return ERROR;

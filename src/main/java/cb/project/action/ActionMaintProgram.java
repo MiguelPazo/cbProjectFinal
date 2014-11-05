@@ -1,16 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * Free License
  */
-
 package cb.project.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  *
- * @author Administrator
+ * @author Miguel Pazo Sánchez (http://miguelpazo.com/)
  */
 public class ActionMaintProgram extends ActionSupport{
     
