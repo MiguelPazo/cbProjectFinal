@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="main" extends="struts-default">
+        <result-types>
+            <result-type name="tiles" 
+                         class="org.apache.struts2.views.tiles.TilesResult"/>
+        </result-types>
+    </package>
+
+    <package name="default" namespace="/" extends="main">
+        
+        <action name="home">
+            <result name="success" type="tiles">index</result>
+        </action>
+        
+        <action name="login"
+                class="ActionLogin" 
+                method="login">
+            <result name="success" type="redirectAction">admin/programs</result>
+            <result name="error" type="redirectAction">home</result>
+        </action>
+    </package>
+    
+    <package name="admin" namespace="/admin" extends="main">
+        <action name="programs">
+            <result name="success" type="tiles">programs</result>
+        </action>
+        
+        <action name="maintenance_program">
+            <result name="success" type="tiles">maintenance_program</result>
+        </action>
+        
+    </package>
+</struts>
