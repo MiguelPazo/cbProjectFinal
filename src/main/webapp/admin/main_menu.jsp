@@ -14,12 +14,15 @@
                 <h3>Menú Principal</h3>
                 
                 <a class="btn btn-primary btn-lg btn-block" href="<s:url action="users" namespace="admin"/>">
+                    <span class='glyphicon glyphicon-user'></span>
                     Usuarios
                 </a>
                 <a class="btn btn-primary btn-lg btn-block" href="<s:url action="programs" namespace="admin"/>">
+                    <span class='glyphicon glyphicon-briefcase'></span>
                     Programas
                 </a>
                 <a class="btn btn-default btn-lg btn-block" href="<s:url action="j_spring_security_logout" namespace="/" />">
+                    <span class='glyphicon glyphicon-log-in'></span>
                     Salir
                 </a>
             </div>
