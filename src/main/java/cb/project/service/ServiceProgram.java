@@ -17,5 +17,9 @@ public interface ServiceProgram {
 
     public void update(ModelProgram oProgram) throws Exception;
 
+    public void delete(ModelProgram oProgram) throws Exception;
+
     public List<ModelProgram> fetchAll() throws Exception;
+
+    public Boolean save(ModelProgram oProgram);
 }

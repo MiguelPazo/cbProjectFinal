@@ -17,13 +17,15 @@
     <context:component-scan base-package="cb.project"/>
     
     <bean id="ActionLogin" class="cb.project.action.ActionLogin" />
-    <bean id="ActionMaintProgram" class="cb.project.action.ActionMaintProgram" />
-    <bean id="ActionProgram" class="cb.project.action.ActionProgram" />
+    <bean id="ActionPrograms" class="cb.project.action.ActionPrograms" />
+    <bean id="ActionProgramsMaint" class="cb.project.action.ActionProgramsMaint" />
+    <bean id="ActionUsers" class="cb.project.action.ActionUsers" />
+    <bean id="ActionUsersMaint" class="cb.project.action.ActionUsersMaint" />
 
     <!--DataSource DB-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/dat"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/cbprojectfinal"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
@@ -43,5 +45,40 @@
         <property name="basePackage" value="cb.project.mapper" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
+    
+    <!--AspectJ-->
+    
+    <!--Priority for annotation-->
+    <tx:annotation-driven order="1"/>
+    
+    <!--Enable annotation of aspectj for AOP-->
+    <aop:aspectj-autoproxy />
+	
+    <!--Inject interceptors-->
+    <aop:config>
+        <aop:aspect id="aspectToWork" ref="InterceptorUser">
+            <aop:pointcut id="afterInsertPointCut" expression="execution(* cb.project.service.impl.ServiceUserImpl.insert(..))" />
+            <aop:after method="afterInsert" pointcut-ref="afterInsertPointCut" />
+        </aop:aspect>
+    </aop:config>
+    
+    <!--Define pointcut-->
+    <aop:config>
+        <aop:pointcut id="pointServiceOperation" expression="execution(* cb.project.service.impl.*.*(..))"/>
+        <aop:advisor advice-ref="txAdviceApp" pointcut-ref="pointServiceOperation"/>
+    </aop:config>
+    
+    <!--Define actions for Advice-->
+    <!--transaction-manager="transactionManager" => Default value-->
+    <tx:advice id="txAdviceApp" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="fetch*" read-only="true"/>
+            <tx:method name="delete*" rollback-for="cb.project.exception.ExceptionApp"/>
+            <tx:method name="insert*" rollback-for="cb.project.exception.ExceptionApp"/>
+            <tx:method name="update*" rollback-for="cb.project.exception.ExceptionApp"/>
+            <tx:method name="save*" rollback-for="cb.project.exception.ExceptionApp"/>
+        </tx:attributes>
+    </tx:advice>
     
 </beans>

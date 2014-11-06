@@ -34,6 +34,11 @@ public class ServiceUserImpl_Sec implements ServiceUser {
     }
 
     @Override
+    public void delete(ModelUser oUser) throws Exception {
+        oDao.delete(oUser);
+    }
+
+    @Override
     public List<ModelUser> fetchAll() throws Exception {
         List<ModelUser> lstUser = oDao.fetchAll();
         return lstUser;
@@ -41,6 +46,11 @@ public class ServiceUserImpl_Sec implements ServiceUser {
 
     @Override
     public Boolean login(ModelUser oUser) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Boolean save(ModelUser oUser) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

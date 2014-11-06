@@ -11,6 +11,8 @@ package cb.project.model;
 public class ModelUser {
 
     private Integer id;
+    private String name;
+    private String lastname;
     private String user;
     private String password;
     private Integer profile;
@@ -21,6 +23,22 @@ public class ModelUser {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getUser() {
@@ -49,6 +67,6 @@ public class ModelUser {
 
     @Override
     public String toString() {
-        return "ModelUser{" + "id=" + id + ", user=" + user + ", password=" + password + ", profile=" + profile + '}';
+        return "ModelUser{" + "id=" + id + ", name=" + name + ", lastname=" + lastname + ", user=" + user + ", password=" + password + ", profile=" + profile + '}';
     }
 }

@@ -32,6 +32,11 @@ public class DaoProgramImpl implements DaoProgram {
     }
 
     @Override
+    public void delete(ModelProgram oProgram) {
+        oMapper.delete(oProgram);
+    }
+
+    @Override
     public List<ModelProgram> fetchAll() {
         List<ModelProgram> lstProgram = oMapper.fetchAll();
         return lstProgram;

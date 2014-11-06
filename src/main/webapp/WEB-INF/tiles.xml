@@ -17,16 +17,33 @@
                        value="/layout/scripts/footer.jsp"/>               
     </definition>
     
-    <definition name="index" extends="layout">
+    <definition name="access_denied" extends="layout">
+        <put-attribute name="body" value="/access_denied.jsp" />
+    </definition>
+    
+    <definition name="home" extends="layout">
         <put-attribute name="body" value="/index.jsp" />
     </definition>
     
-    <definition name="programs" extends="layout">
-        <put-attribute name="body" value="/admin/program.jsp" />
+    <definition name="main_menu" extends="layout">
+        <put-attribute name="body" value="/admin/main_menu.jsp" />
     </definition>
     
-    <definition name="maintenance_program" extends="layout">
-        <put-attribute name="body" value="/admin/maintenance_program.jsp" />
+    <definition name="programs" extends="layout">
+        <put-attribute name="body" value="/admin/programs.jsp" />
     </definition>
+    
+    <definition name="programs_maintenance" extends="layout">
+        <put-attribute name="body" value="/admin/programs_maintenance.jsp" />
+    </definition>
+    
+    <definition name="users" extends="layout">
+        <put-attribute name="body" value="/admin/users.jsp" />
+    </definition>
+    
+    <definition name="users_maintenance" extends="layout">
+        <put-attribute name="body" value="/admin/users_maintenance.jsp" />
+    </definition>
+    
 </tiles-definitions>
 

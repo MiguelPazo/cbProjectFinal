@@ -17,7 +17,11 @@ public interface ServiceUser {
 
     public void update(ModelUser oUser) throws Exception;
 
+    public void delete(ModelUser oUser) throws Exception;
+
     public List<ModelUser> fetchAll() throws Exception;
 
     public Boolean login(ModelUser oUser);
+
+    public Boolean save(ModelUser oUser);
 }

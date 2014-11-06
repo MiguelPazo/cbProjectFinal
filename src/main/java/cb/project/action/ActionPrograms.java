@@ -5,14 +5,19 @@
 package cb.project.action;
 
 import cb.project.model.ModelProgram;
+import cb.project.service.ServiceProgram;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
  * @author Miguel Pazo Sánchez (http://miguelpazo.com/)
  */
-public class ActionProgram extends ActionSupport {
+public class ActionPrograms extends ActionSupport {
+
+    @Autowired
+    private ServiceProgram oService;
 
     private List<ModelProgram> lstProgram;
 
@@ -24,7 +29,13 @@ public class ActionProgram extends ActionSupport {
         this.lstProgram = lstProgram;
     }
 
-    public String index() {
+    @Override
+    public String execute() {
+        try {
+            lstProgram = oService.fetchAll();
+        } catch (Exception e) {
+            return ERROR;
+        }
         return SUCCESS;
     }
 }

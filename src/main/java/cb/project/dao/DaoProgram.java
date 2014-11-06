@@ -17,6 +17,8 @@ public interface DaoProgram {
 
     public void update(ModelProgram oProgram);
 
+    public void delete(ModelProgram oProgram);
+
     public List<ModelProgram> fetchAll();
 
 }

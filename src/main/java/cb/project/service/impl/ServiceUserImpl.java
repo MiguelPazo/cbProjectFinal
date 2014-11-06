@@ -34,6 +34,11 @@ public class ServiceUserImpl implements ServiceUser {
     }
 
     @Override
+    public void delete(ModelUser oUser) throws Exception {
+        oDao.delete(oUser);
+    }
+
+    @Override
     public List<ModelUser> fetchAll() throws Exception {
         List<ModelUser> lstUser = oDao.fetchAll();
         return lstUser;
@@ -41,7 +46,32 @@ public class ServiceUserImpl implements ServiceUser {
 
     @Override
     public Boolean login(ModelUser oUser) {
-        return false;
+        ModelUser oUserSearched = oDao.getByUser(oUser);
+
+        if (oUserSearched != null) {
+            if (oUserSearched.getPassword().equals(oUser.getPassword())) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public Boolean save(ModelUser oUser) {
+        try {
+            if (oUser.getId() == null) {
+                this.insert(oUser);
+            } else {
+                this.update(oUser);
+            }
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }

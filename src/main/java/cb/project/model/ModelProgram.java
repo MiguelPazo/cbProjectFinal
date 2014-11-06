@@ -87,7 +87,5 @@ public class ModelProgram {
     public String toString() {
         return "ModelProgram{" + "idProgram=" + idProgram + ", title=" + title + ", description=" + description + ", goal=" + goal + ", requirements=" + requirements + ", price=" + price + ", duration=" + duration + ", status=" + status + '}';
     }
-    
-    
 
 }

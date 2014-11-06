@@ -17,5 +17,9 @@ public interface DaoUser {
 
     public void update(ModelUser oUser);
 
+    public void delete(ModelUser oUser);
+
     public List<ModelUser> fetchAll();
+
+    public ModelUser getByUser(ModelUser oUser);
 }

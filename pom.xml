@@ -53,8 +53,7 @@
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
             <version>2.1.8</version>
-        </dependency>
-        
+        </dependency>        
         
         <!-- Tiles -->
         <dependency>
@@ -106,20 +105,6 @@
             <artifactId>spring-aop</artifactId>
             <version>3.2.4.RELEASE</version>
         </dependency>
-        
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-instrument-tomcat</artifactId>
-            <version>3.1.0.RELEASE</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-core</artifactId>
-            <version>3.1.4</version>
-        </dependency>
-
-
 
         <!-- Struts 2 + Spring plugins -->
         <dependency>
@@ -134,20 +119,12 @@
             <version>2.3.7</version>
             <type>jar</type>
         </dependency>
-
         
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-instrument-tomcat</artifactId>
             <version>3.1.0.RELEASE</version>
         </dependency>
-        
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-        </dependency>
-
         
         <!-- MyBatis -->
         <dependency>
@@ -162,6 +139,12 @@
             <version>5.1.26</version>
         </dependency>
         
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        
         <!-- MyBatis + Spring -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -169,13 +152,13 @@
             <version>1.2.2</version>
         </dependency>
         
-        
         <!-- Aspectos -->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
             <version>1.6.11</version>
         </dependency>
+        
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>

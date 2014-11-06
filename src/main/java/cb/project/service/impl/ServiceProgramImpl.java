@@ -22,7 +22,7 @@ public class ServiceProgramImpl implements ServiceProgram {
     private DaoProgram oDao;
 
     @Override
-    public void insert(ModelProgram oProgram) throws Exception{
+    public void insert(ModelProgram oProgram) throws Exception {
         oDao.insert(oProgram);
     }
 
@@ -32,9 +32,28 @@ public class ServiceProgramImpl implements ServiceProgram {
     }
 
     @Override
+    public void delete(ModelProgram oProgram) throws Exception {
+        oDao.delete(oProgram);
+    }
+
+    @Override
     public List<ModelProgram> fetchAll() throws Exception {
         List<ModelProgram> lstProgram = oDao.fetchAll();
         return lstProgram;
+    }
+
+    @Override
+    public Boolean save(ModelProgram oProgram) {
+        try {
+            if (oProgram.getIdProgram() == null) {
+                this.insert(oProgram);
+            } else {
+                this.update(oProgram);
+            }
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }

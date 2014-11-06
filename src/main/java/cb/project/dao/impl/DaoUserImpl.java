@@ -32,9 +32,20 @@ public class DaoUserImpl implements DaoUser {
     }
 
     @Override
+    public void delete(ModelUser oUser) {
+        oMapper.delete(oUser);
+    }
+
+    @Override
     public List<ModelUser> fetchAll() {
         List<ModelUser> lstUser = oMapper.fetchAll();
         return lstUser;
+    }
+
+    @Override
+    public ModelUser getByUser(ModelUser oUser) {
+        ModelUser oUserSearched = oMapper.getByUser(oUser);
+        return oUserSearched;
     }
 
 }

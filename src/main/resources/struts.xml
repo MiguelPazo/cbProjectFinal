@@ -4,36 +4,73 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    
     <package name="main" extends="struts-default">
         <result-types>
             <result-type name="tiles" 
                          class="org.apache.struts2.views.tiles.TilesResult"/>
         </result-types>
+        
+        <global-results>
+            <result name="access_denied" type="tiles">access_denied</result>
+        </global-results>
     </package>
 
     <package name="default" namespace="/" extends="main">
         
         <action name="home">
-            <result name="success" type="tiles">index</result>
+            <result name="success" type="tiles">home</result>
         </action>
         
         <action name="login"
                 class="ActionLogin" 
                 method="login">
-            <result name="success" type="redirectAction">admin/programs</result>
+            <result name="success" type="redirectAction">admin/main_menu</result>
             <result name="error" type="redirectAction">home</result>
         </action>
     </package>
     
     <package name="admin" namespace="/admin" extends="main">
-        <action name="programs"
-                class="ActionProgram"
-                method="index">
-            <result name="success" type="tiles">programs</result>
+        <action name="main_menu">
+            <result name="success" type="tiles">main_menu</result>
         </action>
         
-        <action name="maintenance_program">
-            <result name="success" type="tiles">maintenance_program</result>
+        <action name="programs"
+                class="ActionPrograms">
+            <result name="success" type="tiles">programs</result>
+            <result name="error" type="tiles">programs</result>
+        </action>
+        
+        <action name="programs_maintenance"
+                class="ActionProgramsMaint">
+            <result name="success" type="tiles">programs_maintenance</result>
+        </action>
+        
+        <action name="programs_save"
+                class="ActionProgramsMaint"
+                method="save">
+            <result name="success" type="redirectAction">programs</result>
+            <result name="error" type="redirectAction">programs_maintenance</result>
+            <result name="input" type="tiles">programs_maintenance</result>
+        </action>
+        
+        <action name="users"
+                class="ActionUsers">
+            <result name="success" type="tiles">users</result>
+            <result name="error" type="tiles">users</result>
+        </action>
+        
+        <action name="users_maintenance"
+                class="ActionUsersMaint">
+            <result name="success" type="tiles">users_maintenance</result>
+        </action>
+        
+        <action name="users_save"
+                class="ActionUsersMaint"
+                method="save">
+            <result name="success" type="redirectAction">users</result>
+            <result name="error" type="redirectAction">users_maintenance</result>
+            <result name="input" type="tiles">users_maintenance</result>
         </action>
         
     </package>
