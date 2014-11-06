@@ -13,15 +13,19 @@ import java.util.List;
  */
 public interface ServiceUser {
 
-    public void insert(ModelUser oUser) throws Exception;
+    void insert(ModelUser oUser) throws Exception;
 
-    public void update(ModelUser oUser) throws Exception;
+    void update(ModelUser oUser) throws Exception;
 
-    public void delete(ModelUser oUser) throws Exception;
+    void delete(ModelUser oUser) throws Exception;
 
-    public List<ModelUser> fetchAll() throws Exception;
+    Boolean delete(Integer idUser);
 
-    public ModelUser login(ModelUser oUser);
+    List<ModelUser> fetchAll() throws Exception;
 
-    public Boolean save(ModelUser oUser);
+    ModelUser login(ModelUser oUser);
+
+    ModelUser getById(Integer id);
+
+    Boolean save(ModelUser oUser);
 }

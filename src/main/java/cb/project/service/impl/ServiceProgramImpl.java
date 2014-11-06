@@ -45,11 +45,38 @@ public class ServiceProgramImpl implements ServiceProgram {
     @Override
     public Boolean save(ModelProgram oProgram) {
         try {
-            if (oProgram.getIdProgram() == null) {
-                this.insert(oProgram);
-            } else {
+            if (oProgram.getIdProgram() != null) {
                 this.update(oProgram);
+            } else {
+                this.insert(oProgram);
             }
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public ModelProgram getById(Integer id) {
+        ModelProgram oProgram = new ModelProgram();
+        oProgram.setIdProgram(id);
+
+        ModelProgram oProgramSearched = oDao.getById(oProgram);
+
+        if (oProgramSearched != null) {
+            return oProgramSearched;
+        } else {
+            return new ModelProgram();
+        }
+    }
+
+    @Override
+    public Boolean delete(Integer id) {
+        ModelProgram oProgram = new ModelProgram();
+        oProgram.setIdProgram(id);
+
+        try {
+            this.delete(oProgram);
             return true;
         } catch (Exception e) {
             return false;

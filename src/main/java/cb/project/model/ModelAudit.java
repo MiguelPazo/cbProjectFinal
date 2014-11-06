@@ -18,6 +18,17 @@ public class ModelAudit {
     private String advice;
     private String description;
 
+    public ModelAudit() {
+    }
+
+    public ModelAudit(Integer id, Date date, String method, String advice, String description) {
+        this.id = id;
+        this.date = date;
+        this.method = method;
+        this.advice = advice;
+        this.description = description;
+    }
+
     public Integer getId() {
         return id;
     }

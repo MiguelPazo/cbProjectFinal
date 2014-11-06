@@ -6,4 +6,4 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<h1>Acceso Denegado</h1>
+<h3>Acceso Denegado</h3>

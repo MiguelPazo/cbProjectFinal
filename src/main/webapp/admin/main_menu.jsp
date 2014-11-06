@@ -7,14 +7,22 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 
-<a href="<s:url action="users" namespace="admin"/>">
-    Usuarios
-</a>
-<br/>
-<a href="<s:url action="programs" namespace="admin"/>">
-    Programas
-</a>
-<br/>
-<a href="<s:url action="j_spring_security_logout" namespace="/" />">
-    Salir
-</a>
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <h3>Menú Principal</h3>
+                
+                <a class="btn btn-primary btn-lg btn-block" href="<s:url action="users" namespace="admin"/>">
+                    Usuarios
+                </a>
+                <a class="btn btn-primary btn-lg btn-block" href="<s:url action="programs" namespace="admin"/>">
+                    Programas
+                </a>
+                <a class="btn btn-default btn-lg btn-block" href="<s:url action="j_spring_security_logout" namespace="/" />">
+                    Salir
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

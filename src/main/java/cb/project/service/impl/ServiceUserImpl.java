@@ -62,12 +62,45 @@ public class ServiceUserImpl implements ServiceUser {
     @Override
     public Boolean save(ModelUser oUser) {
         try {
-            if (oUser.getId() == null) {
-                this.insert(oUser);
-            } else {
+            if (oUser.getId() != null) {
+                if (oUser.getPassword() == null) {
+                    String password = this.getById(oUser.getId()).getPassword();
+                    oUser.setPassword(password);
+                }
+
                 this.update(oUser);
+            } else {
+                this.insert(oUser);
             }
 
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public ModelUser getById(Integer id) {
+        ModelUser oUser = new ModelUser();
+        oUser.setId(id);
+
+        ModelUser oUserSearched = oDao.getById(oUser);
+
+        if (oUserSearched != null) {
+            return oUserSearched;
+        } else {
+            return new ModelUser();
+        }
+
+    }
+
+    @Override
+    public Boolean delete(Integer idUser) {
+        ModelUser oUser = new ModelUser();
+        oUser.setId(idUser);
+
+        try {
+            this.delete(oUser);
             return true;
         } catch (Exception e) {
             return false;

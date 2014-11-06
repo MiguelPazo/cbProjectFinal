@@ -48,4 +48,10 @@ public class DaoUserImpl implements DaoUser {
         return oUserSearched;
     }
 
+    @Override
+    public ModelUser getById(ModelUser oUser) {
+        ModelUser oUserSearched = oMapper.getById(oUser);
+        return oUserSearched;
+    }
+
 }

@@ -13,13 +13,15 @@ import java.util.List;
  */
 public interface DaoUser {
 
-    public void insert(ModelUser oUser);
+    void insert(ModelUser oUser);
 
-    public void update(ModelUser oUser);
+    void update(ModelUser oUser);
 
-    public void delete(ModelUser oUser);
+    void delete(ModelUser oUser);
 
-    public List<ModelUser> fetchAll();
+    List<ModelUser> fetchAll();
 
-    public ModelUser getByUser(ModelUser oUser);
+    ModelUser getByUser(ModelUser oUser);
+
+    ModelUser getById(ModelUser oUser);
 }

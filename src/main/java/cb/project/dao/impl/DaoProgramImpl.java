@@ -42,4 +42,10 @@ public class DaoProgramImpl implements DaoProgram {
         return lstProgram;
     }
 
+    @Override
+    public ModelProgram getById(ModelProgram oProgram) {
+        ModelProgram oProgramSearched = oMapper.getById(oProgram);
+        return oProgramSearched;
+    }
+
 }

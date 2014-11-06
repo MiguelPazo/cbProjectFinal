@@ -13,12 +13,14 @@ import java.util.List;
  */
 public interface DaoProgram {
 
-    public void insert(ModelProgram oProgram);
+    void insert(ModelProgram oProgram);
 
-    public void update(ModelProgram oProgram);
+    void update(ModelProgram oProgram);
 
-    public void delete(ModelProgram oProgram);
+    void delete(ModelProgram oProgram);
 
-    public List<ModelProgram> fetchAll();
+    List<ModelProgram> fetchAll();
+
+    ModelProgram getById(ModelProgram oProgram);
 
 }

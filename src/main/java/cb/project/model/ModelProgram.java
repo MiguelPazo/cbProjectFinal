@@ -16,15 +16,22 @@ public class ModelProgram {
     private String goal;
     private String requirements;
     private Double price;
-    private Double duration;
-    private String status;
+    private Integer duration;
+    private Integer status;
 
-    public String getDescription() {
-        return description;
+    public ModelProgram() {
+        this.status = 1;
     }
 
-    public void setDescription(String description) {
+    public ModelProgram(Integer idProgram, String title, String description, String goal, String requirements, Double price, Integer duration, Integer status) {
+        this.idProgram = idProgram;
+        this.title = title;
         this.description = description;
+        this.goal = goal;
+        this.requirements = requirements;
+        this.price = price;
+        this.duration = duration;
+        this.status = status;
     }
 
     public Integer getIdProgram() {
@@ -41,6 +48,14 @@ public class ModelProgram {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getGoal() {
@@ -67,19 +82,19 @@ public class ModelProgram {
         this.price = price;
     }
 
-    public Double getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
-    public void setDuration(Double duration) {
+    public void setDuration(Integer duration) {
         this.duration = duration;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

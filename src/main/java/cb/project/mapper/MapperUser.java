@@ -20,6 +20,7 @@ public interface MapperUser {
 
     String FETCHALL = "SELECT IDUSER AS id, NAME as name, LASTNAME as lastname, USER as user, PASSWORD as password, PROFILE as profile FROM USER";
     String GET_BY_USER = "SELECT IDUSER AS id, NAME as name, LASTNAME as lastname, USER as user, PASSWORD as password, PROFILE as profile FROM USER WHERE USER=#{user}";
+    String GET_BY_ID = "SELECT IDUSER AS id, NAME as name, LASTNAME as lastname, USER as user, PASSWORD as password, PROFILE as profile FROM USER WHERE IDUSER=#{id}";
     String INSERT = "INSERT INTO USER (NAME, LASTNAME, USER, PASSWORD, PROFILE) VALUES (#{name},#{lastname},#{user},#{password},#{profile})";
     String UPDATE = "UPDATE USER SET NAME=#{name}, LASTNAME=#{lastname}, USER=#{user}, PASSWORD=#{password}, PROFILE=#{profile} WHERE IDUSER=#{id}";
     String DELETE = "DELETE FROM USER WHERE IDUSER=#{id}";
@@ -39,4 +40,7 @@ public interface MapperUser {
 
     @Select(GET_BY_USER)
     ModelUser getByUser(ModelUser oUser);
+
+    @Select(GET_BY_ID)
+    ModelUser getById(ModelUser oUser);
 }

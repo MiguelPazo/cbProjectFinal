@@ -6,11 +6,27 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<h1>Ingreso al Sistema</h1>
 
-<s:form name="loginForm" action="j_spring_security_check" method="post">           
-    <s:textfield label="Usuario" name="j_username"/>
-    <s:password label="Contraseña" name="j_password"/>
 
-    <s:submit value="Ingresar"  />
-</s:form>
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <h3>Ingreso al Sistema</h3>
+                <form action="<s:url action="j_spring_security_check" />" method="post" rol="form">
+                    <div class="form-group">
+                        <label for="j_username">Usuario:</label>
+                        <s:textfield name="j_username" cssClass="form-control"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="j_password">Contraseña:</label>
+                        <s:password name="j_password" cssClass="form-control"/>
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Ingresar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

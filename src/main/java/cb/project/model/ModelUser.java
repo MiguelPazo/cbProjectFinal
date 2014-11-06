@@ -17,6 +17,18 @@ public class ModelUser {
     private String password;
     private Integer profile;
 
+    public ModelUser() {
+    }
+
+    public ModelUser(Integer id, String name, String lastname, String user, String password, Integer profile) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastname;
+        this.user = user;
+        this.password = password;
+        this.profile = profile;
+    }
+
     public Integer getId() {
         return id;
     }

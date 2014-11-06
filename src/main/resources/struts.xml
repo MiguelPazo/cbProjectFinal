@@ -51,6 +51,12 @@
             <result name="input" type="tiles">programs_maintenance</result>
         </action>
         
+        <action name="programs_delete"
+                class="ActionProgramsMaint"
+                method="delete">
+            <result name="success" type="redirectAction">programs</result>
+        </action>
+        
         <action name="users"
                 class="ActionUsers">
             <result name="success" type="tiles">users</result>
@@ -68,6 +74,12 @@
             <result name="success" type="redirectAction">users</result>
             <result name="error" type="redirectAction">users_maintenance</result>
             <result name="input" type="tiles">users_maintenance</result>
+        </action>
+        
+        <action name="users_delete"
+                class="ActionUsersMaint"
+                method="delete">
+            <result name="success" type="redirectAction">users</result>
         </action>
         
     </package>

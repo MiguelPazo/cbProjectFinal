@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<h1>Lista de Usuarios</h1>
+<h3>Lista de Usuarios</h3>
 
 <table>
     <tr>
@@ -14,6 +14,7 @@
         <th>Apellidos</th>
         <th>Usuario</th>
         <th>Perfil</th>
+        <th>Opciones</th>
     </tr>
     <s:iterator value="lstUser">
         <tr>
@@ -30,6 +31,18 @@
                 <s:else>
                     Cliente
                 </s:else>
+            </td>
+            <td>
+                <a href="<s:url action="users_maintenance">
+                       <s:param name="id" value="id" />
+                   </s:url>">
+                    Editar
+                </a>
+                <a href="<s:url action="users_delete">
+                       <s:param name="id" value="id" />
+                   </s:url>">
+                    Eliminar
+                </a>
             </td>
         </tr>
     </s:iterator>

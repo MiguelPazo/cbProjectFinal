@@ -13,13 +13,17 @@ import java.util.List;
  */
 public interface ServiceProgram {
 
-    public void insert(ModelProgram oProgram) throws Exception;
+    void insert(ModelProgram oProgram) throws Exception;
 
-    public void update(ModelProgram oProgram) throws Exception;
+    void update(ModelProgram oProgram) throws Exception;
 
-    public void delete(ModelProgram oProgram) throws Exception;
+    void delete(ModelProgram oProgram) throws Exception;
 
-    public List<ModelProgram> fetchAll() throws Exception;
+    Boolean delete(Integer id);
 
-    public Boolean save(ModelProgram oProgram);
+    List<ModelProgram> fetchAll() throws Exception;
+
+    Boolean save(ModelProgram oProgram);
+
+    ModelProgram getById(Integer id);
 }

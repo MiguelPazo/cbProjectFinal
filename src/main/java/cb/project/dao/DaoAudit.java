@@ -13,11 +13,11 @@ import java.util.List;
  */
 public interface DaoAudit {
 
-    public void insert(ModelAudit oAudit);
+    void insert(ModelAudit oAudit);
 
-    public void update(ModelAudit oAudit);
+    void update(ModelAudit oAudit);
 
-    public void delete(ModelAudit oAudit);
+    void delete(ModelAudit oAudit);
 
-    public List<ModelAudit> fetchAll();
+    List<ModelAudit> fetchAll();
 }
