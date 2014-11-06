@@ -12,7 +12,7 @@
         </result-types>
         
         <global-results>
-            <result name="access_denied" type="tiles">access_denied</result>
+            <result name="other" type="tiles">home</result>
         </global-results>
     </package>
 
@@ -22,11 +22,8 @@
             <result name="success" type="tiles">home</result>
         </action>
         
-        <action name="login"
-                class="ActionLogin" 
-                method="login">
-            <result name="success" type="redirectAction">admin/main_menu</result>
-            <result name="error" type="redirectAction">home</result>
+        <action name="access_denied">
+            <result name="success" type="tiles">access_denied</result>
         </action>
     </package>
     

@@ -45,17 +45,17 @@ public class ServiceUserImpl implements ServiceUser {
     }
 
     @Override
-    public Boolean login(ModelUser oUser) {
+    public ModelUser login(ModelUser oUser) {
         ModelUser oUserSearched = oDao.getByUser(oUser);
 
         if (oUserSearched != null) {
             if (oUserSearched.getPassword().equals(oUser.getPassword())) {
-                return true;
+                return oUserSearched;
             } else {
-                return false;
+                return null;
             }
         } else {
-            return false;
+            return null;
         }
     }
 

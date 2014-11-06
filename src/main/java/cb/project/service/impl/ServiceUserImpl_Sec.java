@@ -45,7 +45,7 @@ public class ServiceUserImpl_Sec implements ServiceUser {
     }
 
     @Override
-    public Boolean login(ModelUser oUser) {
+    public ModelUser login(ModelUser oUser) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

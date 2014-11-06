@@ -14,3 +14,7 @@
 <a href="<s:url action="programs" namespace="admin"/>">
     Programas
 </a>
+<br/>
+<a href="<s:url action="j_spring_security_logout" namespace="/" />">
+    Salir
+</a>

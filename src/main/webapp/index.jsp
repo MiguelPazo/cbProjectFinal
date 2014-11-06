@@ -8,9 +8,9 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <h1>Ingreso al Sistema</h1>
 
-<s:form action="login" namespace="/">           
-    <s:textfield label="Usuario" name="objUser.user"/>
-    <s:password label="Contraseña" name="objUser.password"/>
-    
+<s:form name="loginForm" action="j_spring_security_check" method="post">           
+    <s:textfield label="Usuario" name="j_username"/>
+    <s:password label="Contraseña" name="j_password"/>
+
     <s:submit value="Ingresar"  />
 </s:form>

@@ -12,12 +12,17 @@
             http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd"
        default-lazy-init="true">
     
+    <!--Inject Spring Security Beans-->
+    <bean id="Profiles" class="cb.project.security.Profiles" />
+    <bean id="MyAutenticationProvider" class="cb.project.security.MyAutenticationProvider" />
+    
+    <!--Spring Security-->
+    <import resource="spring_security.xml" />
+    
     <context:annotation-config/>
-
     <context:component-scan base-package="cb.project"/>
     
     <!--Inject actions for Struts-->
-    <bean id="ActionLogin" class="cb.project.action.ActionLogin" />
     <bean id="ActionPrograms" class="cb.project.action.ActionPrograms" />
     <bean id="ActionProgramsMaint" class="cb.project.action.ActionProgramsMaint" />
     <bean id="ActionUsers" class="cb.project.action.ActionUsers" />

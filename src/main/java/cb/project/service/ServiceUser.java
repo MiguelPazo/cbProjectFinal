@@ -21,7 +21,7 @@ public interface ServiceUser {
 
     public List<ModelUser> fetchAll() throws Exception;
 
-    public Boolean login(ModelUser oUser);
+    public ModelUser login(ModelUser oUser);
 
     public Boolean save(ModelUser oUser);
 }
