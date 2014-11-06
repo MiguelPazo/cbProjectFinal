@@ -16,21 +16,21 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class InterceptorUtils {
 
-//    @Autowired
-//    private static DaoAudit oDao;
+    @Autowired
+    private DaoAudit oDao;
 
-//    public static void registryAdvice(String Advice, JoinPoint jPoint) {
-//        ModelAudit oAudit = new ModelAudit();
-//
-//        String method = jPoint.getSignature().getName();
-//        String description = jPoint.getArgs()[0].toString();
-//
-//        oAudit.setDate(new Date());
-//        oAudit.setMethod(method);
-//        oAudit.setAdvice("Before");
-//        oAudit.setDescription(description);
-//
-//        oDao.insert(oAudit);
-//
-//    }
+    public void registryAdvice(String Advice, JoinPoint jPoint) {
+        ModelAudit oAudit = new ModelAudit();
+
+        String method = jPoint.getSignature().getName();
+        String description = jPoint.getArgs()[0].toString();
+
+        oAudit.setDate(new Date());
+        oAudit.setMethod(method);
+        oAudit.setAdvice("Before");
+        oAudit.setDescription(description);
+
+        oDao.insert(oAudit);
+
+    }
 }

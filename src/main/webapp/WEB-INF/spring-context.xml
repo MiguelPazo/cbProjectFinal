@@ -16,6 +16,7 @@
 
     <context:component-scan base-package="cb.project"/>
     
+    <!--Inject actions for Struts-->
     <bean id="ActionLogin" class="cb.project.action.ActionLogin" />
     <bean id="ActionPrograms" class="cb.project.action.ActionPrograms" />
     <bean id="ActionProgramsMaint" class="cb.project.action.ActionProgramsMaint" />
@@ -55,12 +56,9 @@
     <aop:aspectj-autoproxy />
 	
     <!--Inject interceptors-->
-    <aop:config>
-        <aop:aspect id="aspectToWork" ref="InterceptorUser">
-            <aop:pointcut id="afterInsertPointCut" expression="execution(* cb.project.service.impl.ServiceUserImpl.insert(..))" />
-            <aop:after method="afterInsert" pointcut-ref="afterInsertPointCut" />
-        </aop:aspect>
-    </aop:config>
+    <bean id="InterceptorUtils" class="cb.project.interceptor.InterceptorUtils" />
+    <bean id="InterceptorUser" class="cb.project.interceptor.InterceptorUser" />
+    <bean id="InterceptorProgram" class="cb.project.interceptor.InterceptorProgram" />
     
     <!--Define pointcut-->
     <aop:config>
