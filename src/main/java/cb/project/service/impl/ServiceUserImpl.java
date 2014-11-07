@@ -10,6 +10,7 @@ import cb.project.service.ServiceUser;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 /**
@@ -59,11 +60,14 @@ public class ServiceUserImpl implements ServiceUser {
         }
     }
 
+//    @PreAuthorize("hasRole('SUPER_ADMIN')")
     @Override
     public Boolean save(ModelUser oUser) {
         try {
             if (oUser.getId() != null) {
-                if (oUser.getPassword() == null) {
+                if (oUser.getPassword() == null
+                        || oUser.getPassword().equals("")
+                        || oUser.getPassword().equals("********")) {
                     String password = this.getById(oUser.getId()).getPassword();
                     oUser.setPassword(password);
                 }
@@ -94,6 +98,7 @@ public class ServiceUserImpl implements ServiceUser {
 
     }
 
+//    @PreAuthorize("hasRole('SUPER_ADMIN')")
     @Override
     public Boolean delete(Integer idUser) {
         ModelUser oUser = new ModelUser();

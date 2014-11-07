@@ -9,6 +9,7 @@ import cb.project.model.ModelProgram;
 import cb.project.service.ServiceProgram;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 /**
@@ -42,6 +43,7 @@ public class ServiceProgramImpl implements ServiceProgram {
         return lstProgram;
     }
 
+//    @PreAuthorize("hasRole('SUPER_ADMIN','ADMIN')")
     @Override
     public Boolean save(ModelProgram oProgram) {
         try {
@@ -70,6 +72,7 @@ public class ServiceProgramImpl implements ServiceProgram {
         }
     }
 
+//    @PreAuthorize("hasRole('SUPER_ADMIN','ADMIN')")
     @Override
     public Boolean delete(Integer id) {
         ModelProgram oProgram = new ModelProgram();

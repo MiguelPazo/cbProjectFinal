@@ -10,9 +10,17 @@ package cb.project.security;
  */
 public class Profiles {
 
+    private String superAdmin = "SUPER_ADMIN";
     private String admin = "ADMIN";
-    private String asistent = "ASISTENT";
     private String client = "CLIENT";
+
+    public String getSuperAdmin() {
+        return superAdmin;
+    }
+
+    public void setSuperAdmin(String superAdmin) {
+        this.superAdmin = superAdmin;
+    }
 
     public String getAdmin() {
         return admin;
@@ -20,14 +28,6 @@ public class Profiles {
 
     public void setAdmin(String admin) {
         this.admin = admin;
-    }
-
-    public String getAsistent() {
-        return asistent;
-    }
-
-    public void setAsistent(String asistent) {
-        this.asistent = asistent;
     }
 
     public String getClient() {

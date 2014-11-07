@@ -28,13 +28,14 @@ public class ActionProgramsMaint extends ActionSupport {
 
     private ModelProgram objProgram;
     private List<DtoProgramStatus> lstProgramStatus;
+    private String titleForm;
 
-    public ServiceProgram getoService() {
-        return oService;
+    public String getTitleForm() {
+        return titleForm;
     }
 
-    public void setoService(ServiceProgram oService) {
-        this.oService = oService;
+    public void setTitleForm(String titleForm) {
+        this.titleForm = titleForm;
     }
 
     public List<DtoProgramStatus> getLstProgramStatus() {
@@ -63,8 +64,10 @@ public class ActionProgramsMaint extends ActionSupport {
         String idProgram = request.getParameter("id");
 
         if (idProgram != null) {
+            titleForm = "Edición de Programa";
             objProgram = oService.getById(Integer.valueOf(idProgram));
         } else {
+            titleForm = "Nuevo Programa";
             objProgram = new ModelProgram();
         }
 

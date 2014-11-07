@@ -44,10 +44,10 @@ public class MyAutenticationProvider implements AuthenticationProvider {
 
             switch (oUserLogged.getProfile()) {
                 case 1:
-                    grantedAuths.add(new SimpleGrantedAuthority(oProfile.getAdmin()));
+                    grantedAuths.add(new SimpleGrantedAuthority(oProfile.getSuperAdmin()));
                     break;
                 case 2:
-                    grantedAuths.add(new SimpleGrantedAuthority(oProfile.getAsistent()));
+                    grantedAuths.add(new SimpleGrantedAuthority(oProfile.getAdmin()));
                     break;
                 case 3:
                     grantedAuths.add(new SimpleGrantedAuthority(oProfile.getClient()));

@@ -13,11 +13,11 @@
             <div class="col-md-4 col-md-offset-4">
                 <h3>Menú Principal</h3>
                 
-                <a class="btn btn-primary btn-lg btn-block" href="<s:url action="users" namespace="admin"/>">
+                <a class="btn btn-primary btn-lg btn-block" href="<s:url action="users" />">
                     <span class='glyphicon glyphicon-user'></span>
                     Usuarios
                 </a>
-                <a class="btn btn-primary btn-lg btn-block" href="<s:url action="programs" namespace="admin"/>">
+                <a class="btn btn-primary btn-lg btn-block" href="<s:url action="programs" />">
                     <span class='glyphicon glyphicon-briefcase'></span>
                     Programas
                 </a>

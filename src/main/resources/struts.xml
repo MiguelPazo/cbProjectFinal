@@ -17,13 +17,8 @@
     </package>
 
     <package name="default" namespace="/" extends="main">
-        
         <action name="home">
             <result name="success" type="tiles">home</result>
-        </action>
-        
-        <action name="access_denied">
-            <result name="success" type="tiles">access_denied</result>
         </action>
     </package>
     

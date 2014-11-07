@@ -15,6 +15,7 @@
 
                 <table class="table table-condensed">
                     <tr>
+                        <th>N°</th>
                         <th>Título</th>
                         <th>Descripción</th>
                         <th>Objetivos</th>
@@ -24,8 +25,13 @@
                         <th>Estado</th>
                         <th>Opciones</th>
                     </tr>
+
+                    <s:set var="position" value="0" />
                     <s:iterator value="lstProgram">
-                        <tr><td><s:property value="title"/></td>
+                        <tr>
+                            <s:set var="position">${position + 1}</s:set>
+                            <td>${position}</td>
+                            <td><s:property value="title"/></td>
                             <td><s:property value="description"/></td>
                             <td><s:property value="goal"/></td>
                             <td><s:property value="requirements"/></td>

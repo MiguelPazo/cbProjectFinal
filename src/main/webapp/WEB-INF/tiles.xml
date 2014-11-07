@@ -17,10 +17,6 @@
                        value="/layout/scripts/footer.jsp"/>               
     </definition>
     
-    <definition name="access_denied" extends="layout">
-        <put-attribute name="body" value="/access_denied.jsp" />
-    </definition>
-    
     <definition name="home" extends="layout">
         <put-attribute name="body" value="/index.jsp" />
     </definition>

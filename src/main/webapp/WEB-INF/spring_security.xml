@@ -10,19 +10,31 @@
         
     <http use-expressions="true">
         <intercept-url pattern="/home" access="permitAll" />
-        <intercept-url pattern="/access_denied" access="permitAll" />
                 
-        <intercept-url pattern="/admin/**" access="hasAnyRole('ADMIN','ASISTENT','CLIENT')" />
+        <intercept-url pattern="/admin/users" access="hasAnyRole('SUPER_ADMIN','ADMIN')" />
+        <intercept-url pattern="/admin/users*" access="hasAnyRole('SUPER_ADMIN')" />
+        <intercept-url pattern="/admin/programs" access="isAuthenticated()" />
+        <intercept-url pattern="/admin/programs*" access="hasAnyRole('SUPER_ADMIN','ADMIN')" />
+        <intercept-url pattern="/admin/main_menu" access="isAuthenticated()" />
+        <intercept-url pattern="/admin/" access="isAuthenticated()" />
         <form-login login-page="/home" 
                     default-target-url="/admin/main_menu"
                     authentication-failure-url="/home" />
         <logout logout-success-url="/home" />
         
-        <access-denied-handler error-page="/access_denied" />
+        <access-denied-handler error-page="/access_denied.jsp" />
         <session-management invalid-session-url="/home" />  
     </http>
     
-    <authentication-manager>           
+    <authentication-manager>       
+        <authentication-provider>
+            <user-service>
+                <user name="user01" password="123" authorities="SUPER_ADMIN" />
+                <user name="user02" password="123" authorities="ADMIN" />
+                <user name="user03" password="123" authorities="CLIENT" />
+            </user-service>
+        </authentication-provider>
+              
         <authentication-provider ref="MyAutenticationProvider"/>          
     </authentication-manager>
         

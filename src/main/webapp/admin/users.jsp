@@ -15,23 +15,27 @@
 
                 <table class="table table-condensed">
                     <tr>
+                        <th>N°</th>
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>Usuario</th>
                         <th>Perfil</th>
                         <th>Opciones</th>
                     </tr>
+                    <s:set var="position" value="0" />
                     <s:iterator value="lstUser">
                         <tr>
+                            <s:set var="position" >${position + 1}</s:set>
+                            <td>${position}</td>
                             <td><s:property value="name"/></td>
                             <td><s:property value="lastname"/></td>
                             <td><s:property value="user"/></td>
                             <td>
                                 <s:if test="profile == 1"  >
-                                    Administrador
+                                    Super Administrador
                                 </s:if>
                                 <s:elseif test="profile == 2" >
-                                    Asistente
+                                    Administrador
                                 </s:elseif>
                                 <s:else>
                                     Cliente

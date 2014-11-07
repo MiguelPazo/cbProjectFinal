@@ -28,6 +28,15 @@ public class ActionUsersMaint extends ActionSupport {
 
     private ModelUser objUser;
     private List<DtoUserProfile> lstUserProfile;
+    private String titleForm;
+
+    public String getTitleForm() {
+        return titleForm;
+    }
+
+    public void setTitleForm(String titleForm) {
+        this.titleForm = titleForm;
+    }
 
     public List<DtoUserProfile> getLstUserProfile() {
         return lstUserProfile;
@@ -48,16 +57,22 @@ public class ActionUsersMaint extends ActionSupport {
     @Override
     public String execute() throws Exception {
         lstUserProfile = new ArrayList<DtoUserProfile>();
-        lstUserProfile.add(new DtoUserProfile(1, "Administrador"));
-        lstUserProfile.add(new DtoUserProfile(2, "Asistente"));
+        lstUserProfile.add(new DtoUserProfile(1, "Super Administrador"));
+        lstUserProfile.add(new DtoUserProfile(2, "Administrador"));
         lstUserProfile.add(new DtoUserProfile(3, "Cliente"));
 
         HttpServletRequest request = ServletActionContext.getRequest();
         String idUser = request.getParameter("id");
 
         if (idUser != null) {
+            titleForm = "Edición de Usuario";
             objUser = oService.getById(Integer.valueOf(idUser));
+
+            if (objUser.getPassword() != null || !objUser.getPassword().equals("")) {
+                objUser.setPassword("********");
+            }
         } else {
+            titleForm = "Nuevo Usuario";
             objUser = new ModelUser();
         }
 
