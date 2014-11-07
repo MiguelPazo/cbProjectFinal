@@ -30,4 +30,9 @@ public class InterceptorProgram {
     public void afterSave(JoinPoint jPoint) {
         oUtils.registryAdvice("After", jPoint);
     }
+
+    @Before("execution(* cb.project.service.impl.ServiceProgramImpl.delete(Integer))")
+    public void beforeDelete(JoinPoint jPoint) {
+        oUtils.registryAdvice("Before", jPoint);
+    }
 }

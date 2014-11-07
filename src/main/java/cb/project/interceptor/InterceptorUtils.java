@@ -19,7 +19,7 @@ public class InterceptorUtils {
     @Autowired
     private DaoAudit oDao;
 
-    public void registryAdvice(String Advice, JoinPoint jPoint) {
+    public void registryAdvice(String advice, JoinPoint jPoint) {
         ModelAudit oAudit = new ModelAudit();
 
         String method = jPoint.getSignature().getName();
@@ -27,7 +27,7 @@ public class InterceptorUtils {
 
         oAudit.setDate(new Date());
         oAudit.setMethod(method);
-        oAudit.setAdvice("Before");
+        oAudit.setAdvice(advice);
         oAudit.setDescription(description);
 
         oDao.insert(oAudit);
