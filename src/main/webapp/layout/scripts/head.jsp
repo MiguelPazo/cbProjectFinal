@@ -16,4 +16,5 @@
 <script src="<s:url action="" namespace="/" />js/libs/jquery-1.10.2.min.js"></script>
 <script src="<s:url action="" namespace="/" />js/libs/bootstrap.min.js"></script>
 <script src="<s:url action="" namespace="/" />js/libs/jquery.numeric.min.js"></script>
+<script src="<s:url action="" namespace="/" />js/libs/jquery.number.min.js"></script>
 <script src="<s:url action="" namespace="/" />js/main.js"></script>

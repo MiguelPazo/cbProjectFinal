@@ -31,6 +31,8 @@ public class ActionHome extends ActionSupport {
 
         if (error != null) {
             errorMessage = "Los datos ingresados son incorrectos!";
+        }else{
+            errorMessage = "";
         }
 
         return SUCCESS;

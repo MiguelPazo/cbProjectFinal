@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $('input.numeric').numeric();
-    $('input.decimal').numeric('.');
+//    $('input.decimal').numeric(",");
+    $('input.decimal').number(true, 2, ',', '');
 
     $('form').submit(function(e) {
         var send = true;
@@ -8,7 +9,7 @@ $(document).ready(function() {
         $('form input').each(function(e) {
             if ($(this).hasClass('required')) {
                 var div = $(this).parent();
-                
+
                 if ($(this).val() == '') {
                     div.addClass('has-error');
                     send = false;
