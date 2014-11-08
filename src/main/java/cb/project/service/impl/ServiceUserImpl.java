@@ -5,6 +5,7 @@
 package cb.project.service.impl;
 
 import cb.project.dao.DaoUser;
+import cb.project.exception.ExceptionApp;
 import cb.project.model.ModelUser;
 import cb.project.service.ServiceUser;
 import java.util.List;
@@ -26,7 +27,11 @@ public class ServiceUserImpl implements ServiceUser {
 
     @Override
     public void insert(ModelUser oUser) throws Exception {
-        oDao.insert(oUser);
+        if (oUser != null) {
+            oDao.insert(oUser);
+        } else {
+            throw new ExceptionApp("Error App");
+        }
     }
 
     @Override

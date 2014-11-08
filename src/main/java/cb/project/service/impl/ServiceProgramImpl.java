@@ -5,6 +5,7 @@
 package cb.project.service.impl;
 
 import cb.project.dao.DaoProgram;
+import cb.project.exception.ExceptionApp;
 import cb.project.model.ModelProgram;
 import cb.project.service.ServiceProgram;
 import java.util.List;
@@ -24,7 +25,11 @@ public class ServiceProgramImpl implements ServiceProgram {
 
     @Override
     public void insert(ModelProgram oProgram) throws Exception {
-        oDao.insert(oProgram);
+        if (oProgram != null) {
+            oDao.insert(oProgram);
+        } else {
+            throw new ExceptionApp("Error App");
+        }
     }
 
     @Override
