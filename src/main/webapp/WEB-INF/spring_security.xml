@@ -19,7 +19,7 @@
         <intercept-url pattern="/admin/" access="isAuthenticated()" />
         <form-login login-page="/home" 
                     default-target-url="/admin/main_menu"
-                    authentication-failure-url="/home" />
+                    authentication-failure-url="/home?error=true" />
         <logout logout-success-url="/home" />
         
         <access-denied-handler error-page="/access_denied.jsp" />

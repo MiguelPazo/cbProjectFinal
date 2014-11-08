@@ -17,8 +17,9 @@
     </package>
 
     <package name="default" namespace="/" extends="main">
-        <action name="home">
-            <result name="success" type="tiles">home</result>
+        <action name="home"
+                class="ActionHome">
+            <result type="tiles">home</result>
         </action>
     </package>
     
@@ -42,7 +43,7 @@
                 class="ActionProgramsMaint"
                 method="save">
             <result name="success" type="redirectAction">programs</result>
-            <result name="error" type="redirectAction">programs_maintenance</result>
+            <result name="error" type="tiles">programs_maintenance</result>
             <result name="input" type="tiles">programs_maintenance</result>
         </action>
         
@@ -67,7 +68,7 @@
                 class="ActionUsersMaint"
                 method="save">
             <result name="success" type="redirectAction">users</result>
-            <result name="error" type="redirectAction">users_maintenance</result>
+            <result name="error" type="tiles">users_maintenance</result>
             <result name="input" type="tiles">users_maintenance</result>
         </action>
         

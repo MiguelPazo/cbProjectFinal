@@ -16,31 +16,31 @@
 
                 <form action="<s:url action="programs_save" />" method="post" rol="form">
                     <div class="form-group">
-                        <s:label for="objProgram.title" value="Título" cssClass="col-md-5"/>
-                        <s:textfield name="objProgram.title" required="true" cssClass="required" />
+                        <s:label for="objProgram.title" value="(*) Título" cssClass="col-md-6 control-label"/>
+                        <s:textfield name="objProgram.title" required="true" cssClass="form-control required" maxLength="100" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objProgram.description" value="Descripción" cssClass="col-md-5"/>
-                        <s:textfield name="objProgram.description" required="true" cssClass="required" />
+                        <s:label for="objProgram.description" value="(*) Descripción" cssClass="col-md-6 control-label"/>
+                        <s:textfield name="objProgram.description" required="true" cssClass="form-control required" maxLength="200" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objProgram.goal" value="Objetivos" cssClass="col-md-5"/>
-                        <s:textfield name="objProgram.goal" required="true" cssClass="required" />
+                        <s:label for="objProgram.goal" value="Objetivos" cssClass="col-md-6 control-label"/>
+                        <s:textfield name="objProgram.goal" maxLength="200" cssClass="form-control" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objProgram.requirements" value="Requisitos" cssClass="col-md-5"/>
-                        <s:textfield name="objProgram.requirements" required="true" cssClass="required" />
+                        <s:label for="objProgram.requirements" value="Requisitos" cssClass="col-md-6 control-label"/>
+                        <s:textfield name="objProgram.requirements" cssClass="form-control" maxLength="200" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objProgram.price" value="Precio" cssClass="col-md-5"/>
-                        <s:textfield name="objProgram.price" required="true" cssClass="required decimal" />
+                        <s:label for="objProgram.price" value="(*) Precio" cssClass="col-md-6 control-label"/>
+                        <s:textfield name="objProgram.price" required="true" cssClass="form-control required decimal" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objProgram.duration" value="Duración (días)" cssClass="col-md-5"/>
-                        <s:textfield name="objProgram.duration" required="true" cssClass="required numeric" />
+                        <s:label for="objProgram.duration" value="(*) Duración (días)" cssClass="col-md-6 control-label"/>
+                        <s:textfield name="objProgram.duration" required="true" cssClass="form-control required numeric" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objProgram.status" value="Estado" cssClass="col-md-5"/>
+                        <s:label for="objProgram.status" value="(*) Estado" cssClass="col-md-6 control-label"/>
                         <s:radio name="objProgram.status" list="lstProgramStatus" listKey="id" listValue="description" required="true" />
                     </div>
 

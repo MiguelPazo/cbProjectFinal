@@ -23,6 +23,7 @@
     <context:component-scan base-package="cb.project"/>
     
     <!--Inject actions for Struts-->
+    <bean id="ActionHome" class="cb.project.action.ActionHome" />
     <bean id="ActionPrograms" class="cb.project.action.ActionPrograms" />
     <bean id="ActionProgramsMaint" class="cb.project.action.ActionProgramsMaint" />
     <bean id="ActionUsers" class="cb.project.action.ActionUsers" />

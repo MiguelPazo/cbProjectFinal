@@ -30,7 +30,7 @@ public class InterceptorUser {
         oUtils.registryAdvice("After", jPoint);
     }
     
-    @Before("execution(* cb.project.service.impl.ServiceUserImpl.delete(Integer))")
+    @Before("execution(* cb.project.dao.impl.DaoUserImpl.delete(..))")
     public void beforeDelete(JoinPoint jPoint) {
         oUtils.registryAdvice("Before", jPoint);
     }

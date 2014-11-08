@@ -15,14 +15,15 @@
                 <h3>Ingreso al Sistema</h3>
                 <form action="<s:url action="j_spring_security_check" />" method="post" rol="form">
                     <div class="form-group">
-                        <label for="j_username">Usuario:</label>
+                        <label class="control-label" for="j_username">Usuario:</label>
                         <s:textfield name="j_username" cssClass="form-control required"/>
                     </div>
 
                     <div class="form-group">
-                        <label for="j_password">Contraseña:</label>
+                        <label class="control-label" for="j_password">Contraseña:</label>
                         <s:password name="j_password" cssClass="form-control required"/>
                     </div>
+                    <p class="bg-danger"><s:property value="errorMessage" /></p>
 
                     <button type="submit" class="btn btn-default">Ingresar</button>
                 </form>

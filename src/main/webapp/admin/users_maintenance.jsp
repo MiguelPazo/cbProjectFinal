@@ -16,24 +16,24 @@
 
                 <form action="<s:url action="users_save" />" method="post" rol="form">
                     <div class="form-group">
-                        <s:label for="objUser.name" value="Nombres" cssClass="col-md-5"/>
-                        <s:textfield label="" name="objUser.name" required="true" cssClass="required" />
+                        <s:label for="objUser.name" value="(*) Nombres" cssClass="col-md-5 control-label"/>
+                        <s:textfield name="objUser.name" required="true" cssClass="form-control required" maxLength="50" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objUser.lastname" value="Apellidos" cssClass="col-md-5"/>
-                        <s:textfield label="" name="objUser.lastname" required="true" cssClass="required" />
+                        <s:label for="objUser.lastname" value="(*) Apellidos" cssClass="col-md-5 control-label"/>
+                        <s:textfield name="objUser.lastname" required="true" cssClass="form-control required" maxLength="100" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objUser.user" value="Usuario" cssClass="col-md-5"/>
-                        <s:textfield label="" name="objUser.user" required="true" cssClass="required" />
+                        <s:label for="objUser.user" value="(*) Usuario" cssClass="col-md-5 control-label"/>
+                        <s:textfield name="objUser.user" required="true" cssClass="form-control required" maxLength="6" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objUser.password" value="Contraseña" cssClass="col-md-5"/>
-                        <s:password label="" name="objUser.password" required="true" cssClass="required" showPassword="true" />
+                        <s:label for="objUser.password" value="(*) Contraseña" cssClass="col-md-5 control-label"/>
+                        <s:password name="objUser.password" required="true" cssClass="form-control required" showPassword="true" maxLength="6" />
                     </div>
                     <div class="form-group">
-                        <s:label for="objUser.profile" value="Perfil" cssClass="col-md-5"/>
-                        <s:select label="" list="lstUserProfile" listKey="id" listValue="description" name="objUser.profile" />
+                        <s:label for="objUser.profile" value="(*) Perfil" cssClass="col-md-5 control-label"/>
+                        <s:select list="lstUserProfile" listKey="id" listValue="description" name="objUser.profile" />
                     </div>
                     <s:hidden name="objUser.id" />
 
