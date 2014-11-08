@@ -48,7 +48,7 @@ public class ServiceProgramImpl implements ServiceProgram {
         return lstProgram;
     }
 
-    @PreAuthorize("hasRole('SUPER_ADMIN','ADMIN')")
+//    @PreAuthorize("hasRole('SUPER_ADMIN','ADMIN')")
     @Override
     public Boolean save(ModelProgram oProgram) {
         try {
@@ -77,7 +77,7 @@ public class ServiceProgramImpl implements ServiceProgram {
         }
     }
 
-    @PreAuthorize("hasRole('SUPER_ADMIN','ADMIN')")
+//    @PreAuthorize("hasRole('SUPER_ADMIN','ADMIN')")
     @Override
     public Boolean delete(Integer id) {
         ModelProgram oProgram = new ModelProgram();

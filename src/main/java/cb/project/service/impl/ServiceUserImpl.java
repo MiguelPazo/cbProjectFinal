@@ -65,7 +65,7 @@ public class ServiceUserImpl implements ServiceUser {
         }
     }
 
-    @PreAuthorize("hasRole('SUPER_ADMIN')")
+//    @PreAuthorize("hasRole('SUPER_ADMIN')")
     @Override
     public Boolean save(ModelUser oUser) {
         try {
@@ -103,7 +103,7 @@ public class ServiceUserImpl implements ServiceUser {
 
     }
 
-    @PreAuthorize("hasRole('SUPER_ADMIN')")
+//    @PreAuthorize("hasRole('SUPER_ADMIN')")
     @Override
     public Boolean delete(Integer idUser) {
         ModelUser oUser = new ModelUser();
